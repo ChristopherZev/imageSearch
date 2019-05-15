@@ -1,23 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchField from './SearchField';
-import ListOfImages from './ListOfImages';
+import App from './components/App';
 
 
-class App extends React.Component{
-	render() {
-		return(
-			<div>
-				<SearchField />
-					<br/>
-				<ListOfImages />
-			</div>
-		);
+ReactDOM.render(
+	<App />,
+	document.querySelector('#root')
+);
 
-	}
-	
-};
-
-
-
-ReactDOM.render(<App />,document.querySelector('#root'));
