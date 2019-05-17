@@ -6,7 +6,7 @@ import ListOfImages from './ListOfImages';
 class App extends React.Component{
 	render() {
 		return(
-			<div>Hello App
+			<div className="ui container" style={{marginTop: '10px'}}>
 				<SearchField />
 					<br/>
 				<ListOfImages />
