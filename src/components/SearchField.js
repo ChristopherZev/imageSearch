@@ -1,9 +1,15 @@
 import React from 'react';
 
-const SearchField = () => {
-	return(
-		<div>Search</div>
-	);
-};
+class SearchField extends React.Component{
+	render(){	
+		return(
+			<div>
+				<form>
+					<input type="text" />
+				</form>
+			</div>
+		);
+	}
+}
 
 export default SearchField;
