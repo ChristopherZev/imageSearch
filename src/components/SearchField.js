@@ -3,15 +3,25 @@ import React from 'react';
 class SearchField extends React.Component{
 	/*
 	The onInputchange method is made to handle or be called 
-	any time someone changes the input.
+	any time someone changes the input. Which is uncontrolled.
 
 	It is named specifically on Input Change because it targets
 	any change made to the input tag where the func is called
 	via the onChange prop
-	*/
+	
 	onInputChange(event){
 		console.log(event.target.value);
 	}
+	*/
+
+	/*
+	Controlled vs Uncontrolled components-------------------
+	Controlled is the act of storing data in React comp vs
+	HTML elements i.e. storing and using state to get the current
+	value of the input field vs leaving the HTML to determine the
+	value.
+	*/
+	state = { term: '' };
 	
 	render(){	
 		return(
@@ -37,9 +47,12 @@ class SearchField extends React.Component{
 						do not need to define the onInputChange handler above
 						
 						onChange={(e) => console.log(e.target.value)} />
-
+						
+						an uncontrolled version would also be 
+						onChange={this.onInputChange} 
 						*/
-						onChange={this.onInputchange} />
+						value={this.state.term}
+						onChange={e => this.setState({ term: e.target.value })} />
 
 					</div>
 				</form>
