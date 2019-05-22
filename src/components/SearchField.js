@@ -22,11 +22,21 @@ class SearchField extends React.Component{
 	value.
 	*/
 	state = { term: '' };
+
+	/*
+	onFormSubmit was changed to an arrow func so that the this
+	keyword gets automatically binded to value of the instance
+	of the SearchField 
+	*/
+	onFormSubmit = (event) => {
+		event.preventDefault();
+		console.log(this.state.term);
+	}
 	
 	render(){	
 		return(
 			<div className="ui segment">
-				<form className="ui form">
+				<form onSubmit={this.onFormSubmit}className="ui form">
 					<div className="field">
 						<label>Search Images</label>
 						{/*
