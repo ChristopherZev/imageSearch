@@ -3,12 +3,16 @@ import React from 'react';
 class SearchField extends React.Component{
 	/*
 	The onInputchange method is made to handle or be called 
-	any time someone changes the input.   
-	*/	 
+	any time someone changes the input.
+
+	It is named specifically on Input Change because it targets
+	any change made to the input tag where the func is called
+	via the onChange prop
+	*/
 	onInputChange(event){
 		console.log(event.target.value);
 	}
-
+	
 	render(){	
 		return(
 			<div className="ui segment">
@@ -26,7 +30,17 @@ class SearchField extends React.Component{
 
 						Others examples of eventhandlers are onClick,onSubmit
 						*/}
-						<input type="text" onChange={this.onInputChange} />
+						<input type="text" 
+						/*
+						onChange can have the abbreviated version using arrow
+						functions seen below as well. With this version you
+						do not need to define the onInputChange handler above
+						
+						onChange={(e) => console.log(e.target.value)} />
+
+						*/
+						onChange={this.onInputchange} />
+
 					</div>
 				</form>
 			</div>
