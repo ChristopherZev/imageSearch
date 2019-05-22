@@ -21,7 +21,7 @@ class SearchField extends React.Component{
 	value of the input field vs leaving the HTML to determine the
 	value.
 	*/
-	state = { term: '' };
+	state = { searchTerm: '' };
 
 	/*
 	onFormSubmit was changed to an arrow func so that the this
@@ -30,7 +30,11 @@ class SearchField extends React.Component{
 	*/
 	onFormSubmit = (event) => {
 		event.preventDefault();
-		console.log(this.state.term);
+		/*
+		This line allows us to pass in the props from here to the 
+		App component
+		*/ 
+		this.props.onSubmit(this.state.searchTerm);
 	}
 	
 	render(){	
@@ -61,8 +65,8 @@ class SearchField extends React.Component{
 						an uncontrolled version would also be 
 						onChange={this.onInputChange} 
 						*/
-						value={this.state.term}
-						onChange={e => this.setState({ term: e.target.value })} />
+						value={this.state.searchTerm}
+						onChange={e => this.setState({ searchTerm: e.target.value })} />
 
 					</div>
 				</form>
