@@ -1,4 +1,7 @@
 import React from 'react';
+import axios from 'axios';
+//Best practice list import for 3rd party/dependencies before our own files
+
 import SearchField from './SearchField';
 import ListOfImages from './ListOfImages';
 
@@ -26,7 +29,7 @@ class App extends React.Component{
 
 	}
 	
-};
+}
 
 
 

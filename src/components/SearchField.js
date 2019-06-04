@@ -28,7 +28,7 @@ class SearchField extends React.Component{
 	keyword gets automatically binded to value of the instance
 	of the SearchField 
 	*/
-	onFormSubmit = (event) => {
+	onFormSubmit = event => {
 		event.preventDefault();
 		/*
 		This line allows us to pass in the props from here to the 
