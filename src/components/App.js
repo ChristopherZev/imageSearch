@@ -7,11 +7,13 @@ import ListOfImages from './ListOfImages';
 
 
 class App extends React.Component{
+
+	state = {pics: [] };
 	/*
 	created onSearchSubmit to pass user input from the searchfield
 	component
 	*/
-	async onSearchSubmit(searchTerm){
+	onSearchSubmit = async (searchTerm) => {
 		/*
 		Axios.get uses the Unsplash Api to return a photo based
 		on the "searchTerm" entered 
@@ -24,7 +26,8 @@ class App extends React.Component{
 				Authorization: 'Client-ID 67f8a7b922bccd5adade12bf5acf5dd9092f1e9797244ac13a4a3bc1c2461ef1'
 			}
 		});
-		console.log(response.data.results);
+		//console.log(this)
+		this.setState({ pics: response.data.results});
 	}
 
 	render() {
@@ -34,7 +37,9 @@ class App extends React.Component{
 				 this line called onSearchSubmit
 				*/}
 				<SearchField onSubmit={this.onSearchSubmit} />
+				Found: {this.state.pics.length} pictures.
 					<br/>
+				
 				<ListOfImages />
 			</div>
 		);
