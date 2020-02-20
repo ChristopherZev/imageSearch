@@ -1,6 +1,5 @@
 import React from 'react';
 import unsplash from '../api/unsplash';
-
 import SearchField from './SearchField';
 import ListOfImages from './ListOfImages';
 
@@ -10,7 +9,7 @@ class App extends React.Component{
 	state = {pics: [] };
 	onSearchSubmit = async (searchTerm) => {
 		
-		const response = await unsplash.get('https://api.unsplash.com/search/photos',{
+		const response = await unsplash.get('../search/photos',{
 			params: {query: searchTerm}
 		});
 	
@@ -25,7 +24,7 @@ class App extends React.Component{
 				Found: {this.state.pics.length} pictures.
 					<br/>
 				
-				<ListOfImages />
+				<ListOfImages pics={this.state.pics}/>
 			</div>
 		);
 
