@@ -24,7 +24,6 @@ yarn-error.log*
 
 #my config
 Comments.txt
-src/api/unsplash.js
 
 #api keys
 .env
