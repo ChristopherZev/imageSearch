@@ -1,6 +1,6 @@
 
 import React from 'react';
-import unsplash from '../api/unsplash';
+import unsplash from '../api/unsplash'
 import SearchField from './SearchField';
 import ListOfImages from './ListOfImages';
 
