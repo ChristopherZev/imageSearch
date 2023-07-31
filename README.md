@@ -22,20 +22,26 @@ Once you have Unsplash Account run the following from your project directory:
 
 This will create an api directory under src/ and the unsplash.js file under the new api directory.
 
-In the unsplash.js file insert the following with your own API Key.
+In the unsplash.js file insert the following with your own to define your API Key Variable via `REACT_APP_Auth`.
 
 ```javascript
 import axios from 'axios';
 
+const Authorization = process.env.REACT_APP_AUTH
+
 export default axios.create({
-    baseURL: 'https://api.unsplash.com', 
-    
-    // format: 'Client-ID ############################'
-    headers: {
-        Authorization: 'Client-ID #############'
-    }
+	baseURL: 'https://api.unsplash.com', 
+	
+	headers: {
+		Authorization: `bearer ${Authorization}`
+	}
 });
 ```
+
+* Create the `.env` file `touch .env`
+* Navigate to `.env` file
+* Define the API Key Variable here like this: `REACT_APP_AUTH=Client-ID#####################################`
+
 When this file is in place enter `npm start` and you are done!
 
 ***
